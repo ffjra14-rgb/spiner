@@ -1,0 +1,198 @@
+admin%0a[INFO] User logged in
+admin%0a[ERROR] Database crash
+admin%0a[WARNING] High memory usage
+admin%0a[DEBUG] Query executed
+admin%0a[SECURITY] Failed login attempt
+admin%0a[SECURITY] Password changed
+admin%0a[SECURITY] User deleted
+admin%0a[SECURITY] Role changed
+admin%0a[AUTH] Login successful
+admin%0a[AUTH] Login failed
+admin%0a[AUTH] Logout
+admin%0a[ACCESS] File read
+admin%0a[ACCESS] File write
+admin%0a[ACCESS] File delete
+admin%0a[ACCESS] Directory listing
+admin%0a[NET] Connection established
+admin%0a[NET] Connection closed
+admin%0a[NET] Packet received
+admin%0a[NET] Packet sent
+admin%0a[SYSTEM] Reboot
+admin%0a[SYSTEM] Shutdown
+admin%0a[SYSTEM] Service started
+admin%0a[SYSTEM] Service stopped
+admin%0a[SYSTEM] Cron job executed
+admin%0a[DB] Query executed
+admin%0a[DB] Query failed
+admin%0a[DB] Connection opened
+admin%0a[DB] Connection closed
+admin%0a[DB] Transaction begin
+admin%0a[DB] Transaction commit
+admin%0a[DB] Transaction rollback
+admin%0a[CACHE] Hit
+admin%0a[CACHE] Miss
+admin%0a[CACHE] Invalidated
+admin%0a[CACHE] Stored
+admin%0a[QUEUE] Job pushed
+admin%0a[QUEUE] Job popped
+admin%0a[QUEUE] Job processed
+admin%0a[QUEUE] Job failed
+admin%0a[QUEUE] Retry
+admin%0a[MAIL] Sent
+admin%0a[MAIL] Failed
+admin%0a[MAIL] Received
+admin%0a[MAIL] Spam
+admin%0a[API] Request received
+admin%0a[API] Response sent
+admin%0a[API] Error
+admin%0a[API] Timeout
+admin%0a[API] Rate limit
+admin%0a[FRONTEND] Page rendered
+admin%0a[FRONTEND] Page error
+admin%0a[FRONTEND] JS error
+admin%0a[FRONTEND] CSS error
+admin%0a[FRONTEND] Image loaded
+admin%0a[FRONTEND] Image failed
+admin%0a[FRONTEND] Font loaded
+admin%0a[FRONTEND] Font failed
+admin%0a[FRONTEND] Video loaded
+admin%0a[FRONTEND] Video failed
+admin%0a[FRONTEND] Audio loaded
+admin%0a[FRONTEND] Audio failed
+admin%0a[FRONTEND] WebSocket connected
+admin%0a[FRONTEND] WebSocket closed
+admin%0a[FRONTEND] WebSocket error
+admin%0a[FRONTEND] WebSocket message
+admin%0a[FRONTEND] Canvas drawn
+admin%0a[FRONTEND] Canvas error
+admin%0a[FRONTEND] Geolocation allowed
+admin%0a[FRONTEND] Geolocation denied
+admin%0a[FRONTEND] Notification allowed
+admin%0a[FRONTEND] Notification denied
+admin%0a[FRONTEND] Service worker registered
+admin%0a[FRONTEND] Service worker unregistered
+admin%0a[FRONTEND] Service worker error
+admin%0a[FRONTEND] Service worker message
+admin%0a[FRONTEND] Push received
+admin%0a[FRONTEND] Push clicked
+admin%0a[FRONTEND] Push error
+admin%0a[FRONTEND] Payment success
+admin%0a[FRONTEND] Payment failure
+admin%0a[FRONTEND] Payment cancelled
+admin%0a[FRONTEND] Share success
+admin%0a[FRONTEND] Share failure
+admin%0a[FRONTEND] Credential management success
+admin%0a[FRONTEND] Credential management failure
+admin%0a[FRONTEND] Autofill success
+admin%0a[FRONTEND] Autofill failure
+admin%0a[FRONTEND] Clipboard read
+admin%0a[FRONTEND] Clipboard write
+admin%0a[FRONTEND] Clipboard error
+admin%0a[FRONTEND] Drag and drop success
+admin%0a[FRONTEND] Drag and drop failure
+admin%0a[FRONTEND] Fullscreen entered
+admin%0a[FRONTEND] Fullscreen exited
+admin%0a[FRONTEND] Fullscreen error
+admin%0a[FRONTEND] Print success
+admin%0a[FRONTEND] Print failure
+admin%0a[FRONTEND] Print cancelled
+admin%0a[FRONTEND] Save success
+admin%0a[FRONTEND] Save failure
+admin%0a[FRONTEND] Save cancelled
+admin%0a[FRONTEND] Open success
+admin%0a[FRONTEND] Open failure
+admin%0a[FRONTEND] Open cancelled
+admin%0a[FRONTEND] File picker success
+admin%0a[FRONTEND] File picker failure
+admin%0a[FRONTEND] File picker cancelled
+admin%0a[FRONTEND] Directory picker success
+admin%0a[FRONTEND] Directory picker failure
+admin%0a[FRONTEND] Directory picker cancelled
+admin%0a[FRONTEND] Camera allowed
+admin%0a[FRONTEND] Camera denied
+admin%0a[FRONTEND] Camera error
+admin%0a[FRONTEND] Microphone allowed
+admin%0a[FRONTEND] Microphone denied
+admin%0a[FRONTEND] Microphone error
+admin%0a[FRONTEND] Speaker allowed
+admin%0a[FRONTEND] Speaker denied
+admin%0a[FRONTEND] Speaker error
+admin%0a[FRONTEND] Sensor allowed
+admin%0a[FRONTEND] Sensor denied
+admin%0a[FRONTEND] Sensor error
+admin%0a[FRONTEND] Battery status
+admin%0a[FRONTEND] Battery charging
+admin%0a[FRONTEND] Battery discharging
+admin%0a[FRONTEND] Network online
+admin%0a[FRONTEND] Network offline
+admin%0a[FRONTEND] Network type
+admin%0a[FRONTEND] Network speed
+admin%0a[FRONTEND] Screen orientation
+admin%0a[FRONTEND] Screen resolution
+admin%0a[FRONTEND] Screen size
+admin%0a[FRONTEND] Window resized
+admin%0a[FRONTEND] Window scrolled
+admin%0a[FRONTEND] Window focus
+admin%0a[FRONTEND] Window blur
+admin%0a[FRONTEND] Window error
+admin%0a[FRONTEND] Window unload
+admin%0a[FRONTEND] Window beforeunload
+admin%0a[FRONTEND] Window load
+admin%0a[FRONTEND] DOM ready
+admin%0a[FRONTEND] DOM loaded
+admin%0a[FRONTEND] DOM error
+admin%0a[FRONTEND] CSS loaded
+admin%0a[FRONTEND] CSS error
+admin%0a[FRONTEND] JS loaded
+admin%0a[FRONTEND] JS error
+admin%0a[FRONTEND] Image loaded
+admin%0a[FRONTEND] Image error
+admin%0a[FRONTEND] Font loaded
+admin%0a[FRONTEND] Font error
+admin%0a[FRONTEND] Video loaded
+admin%0a[FRONTEND] Video error
+admin%0a[FRONTEND] Audio loaded
+admin%0a[FRONTEND] Audio error
+admin%0a[FRONTEND] WebSocket connected
+admin%0a[FRONTEND] WebSocket closed
+admin%0a[FRONTEND] WebSocket error
+admin%0a[FRONTEND] WebSocket message
+admin%0a[FRONTEND] Canvas drawn
+admin%0a[FRONTEND] Canvas error
+admin%0a[FRONTEND] Geolocation allowed
+admin%0a[FRONTEND] Geolocation denied
+admin%0a[FRONTEND] Notification allowed
+admin%0a[FRONTEND] Notification denied
+admin%0a[FRONTEND] Service worker registered
+admin%0a[FRONTEND] Service worker unregistered
+admin%0a[FRONTEND] Service worker error
+admin%0a[FRONTEND] Service worker message
+admin%0a[FRONTEND] Push received
+admin%0a[FRONTEND] Push clicked
+admin%0a[FRONTEND] Push error
+admin%0a[FRONTEND] Payment success
+admin%0a[FRONTEND] Payment failure
+admin%0a[FRONTEND] Payment cancelled
+admin%0a[FRONTEND] Share success
+admin%0a[FRONTEND] Share failure
+admin%0a[FRONTEND] Credential management success
+admin%0a[FRONTEND] Credential management failure
+admin%0a[FRONTEND] Autofill success
+admin%0a[FRONTEND] Autofill failure
+admin%0a[FRONTEND] Clipboard read
+admin%0a[FRONTEND] Clipboard write
+admin%0a[FRONTEND] Clipboard error
+admin%0a[FRONTEND] Drag and drop success
+admin%0a[FRONTEND] Drag and drop failure
+admin%0a[FRONTEND] Fullscreen entered
+admin%0a[FRONTEND] Fullscreen exited
+admin%0a[FRONTEND] Fullscreen error
+admin%0a[FRONTEND] Print success
+admin%0a[FRONTEND] Print failure
+admin%0a[FRONTEND] Print cancelled
+admin%0a[FRONTEND] Save success
+admin%0a[FRONTEND] Save failure
+admin%0a[FRONTEND] Save cancelled
+admin%0a[FRONTEND] Open success
+admin%0a[FRONTEND] Open failure
+admin%0a[FRONTEND] Open cancelled
